@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ContentBuilder.js Example - Using in Mustard UI framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">  
+    <link rel="shortcut icon" href="#" /> 
+    
+    <!-- Mustard UI -->
+    <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+    
+    <link href="assets/minimalist-blocks/content.css" rel="stylesheet" type="text/css" />
+    <link href="contentbuilder/contentbuilder.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .container {margin: 140px auto; max-width: 800px; width:100%; padding:0 35px; box-sizing: border-box;}
+        
+        /* Adjustment for Mustard UI */
+        .row .col {padding: 0px 15px;}
+        button:focus, button:hover {
+            opacity: initial;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="row">
+        <div class="col col-md-12">
+            <h1 class="size-46">This content layout is using Mustard UI grid</h1>
+            <p class="size-16"><i style="color: rgb(136, 136, 136);">Try ContentBuilder.js to edit content or change layout (add, copy, move, delete rows & columns). 
+            You can also resize columns and change columns to row or vice versa.</i></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-12">
+            <div class="spacer height-60"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-6">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+        <div class="col col-md-6">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+    </div>
+</div>
+
+<script src="contentbuilder/contentbuilder.min.js" type="text/javascript"></script>
+<script src="assets/minimalist-blocks/content.js" type="text/javascript"></script>
+
+<script>
+    var builder = new ContentBuilder({
+        container: '.container',
+        snippetOpen: true,
+        row: 'row',
+        cols: ['col col-md-1', 'col col-md-2', 'col col-md-3', 'col col-md-4', 'col col-md-5', 'col col-md-6', 'col col-md-7', 'col col-md-8', 'col col-md-9', 'col col-md-10', 'col col-md-11', 'col col-md-12'],
+        clearPreferences: true
+    });
+</script>
+
+</body>
+</html>

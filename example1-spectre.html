@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ContentBuilder.js Example - Using in Spectre.css framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">  
+    <link rel="shortcut icon" href="#" /> 
+
+    <!-- Spectre.css -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    
+    <link href="assets/minimalist-blocks/content.css" rel="stylesheet" type="text/css" />
+    <link href="contentbuilder/contentbuilder.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .container {margin: 150px auto; max-width: 800px; width:100%; padding:0 35px; box-sizing: border-box;}
+        
+        /* Adjustment for Spectre.css */
+        a:focus {box-shadow:initial;}
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="columns">
+        <div class="column col-sm-12 col-12">
+            <h1 class="size-46">This content layout is using Spectre.css grid</h1>
+            <p class="size-16"><i style="color: rgb(136, 136, 136);">Try ContentBuilder.js to edit content or change layout (add, copy, move, delete rows & columns). 
+            You can also resize columns and change columns to row or vice versa.</i></p>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column col-sm-12 col-12">
+            <div class="spacer height-60"></div>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column col-sm-12 col-6">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+        <div class="column col-sm-12 col-6">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+    </div>
+</div>
+
+<script src="contentbuilder/contentbuilder.min.js" type="text/javascript"></script>
+<script src="assets/minimalist-blocks/content.js" type="text/javascript"></script>
+
+<script>
+    var builder = new ContentBuilder({
+        container: '.container',
+        snippetOpen: true,
+        row: 'columns', 
+        cols: ['column col-sm-12 col-1', 'column col-sm-12 col-2', 'column col-sm-12 col-3', 'column col-sm-12 col-4', 'column col-sm-12 col-5', 'column col-sm-12 col-6', 'column col-sm-12 col-7', 'column col-sm-12 col-8', 'column col-sm-12 col-9', 'column col-sm-12 col-10', 'column col-sm-12 col-11', 'column col-sm-12 col-12'],
+        clearPreferences: true
+    });
+</script>
+
+</body>
+</html>

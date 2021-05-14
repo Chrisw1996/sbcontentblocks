@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ContentBuilder.js Example - Using in Milligram framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">  
+    <link rel="shortcut icon" href="#" /> 
+    
+    <!-- Milligram -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link href="assets/minimalist-blocks/content.css" rel="stylesheet" type="text/css" />
+    <link href="contentbuilder/contentbuilder.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .container {margin: 140px auto; max-width: 800px; width:100%; padding:0 35px; box-sizing: border-box;}
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1 class="size-46">This content layout is using Milligram grid</h1>
+            <p class="size-16"><i style="color: rgb(136, 136, 136);">Try ContentBuilder.js to edit content or change layout (add, copy, move, delete rows & columns). 
+            You can also resize columns and change columns to row or vice versa.</i></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="spacer height-60"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column column-50">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+        <div class="column column-50">
+            <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Vivamus leo ante, consectetur sit amet, sit amet lectus.</p>
+        </div>
+    </div>
+</div>
+
+<script src="contentbuilder/contentbuilder.min.js" type="text/javascript"></script>
+<script src="assets/minimalist-blocks/content.js" type="text/javascript"></script>
+
+<script>
+    var builder = new ContentBuilder({
+        container: '.container',
+        snippetOpen: true,
+        row: 'row',
+            cols: ['column column-10', 'column column-20', 'column column-25', 'column column-33', 'column column-40', 'column column-50', 'column column-60', 'column column-67', 'column column-75', 'column column-80', 'column column-90', 'column'],
+
+            //the following parameters are needed for grid system in which the column size increment is not constant.
+            colequal: [
+	                ['column column-25', 'column column-25', 'column column-25', 'column column-25'],
+	                ['column column-33', 'column column-33', 'column column-33'],
+	                ['column column-50', 'column column-50']
+            ],
+            colsizes: [
+                [   //increment for 3 columns
+	                ['column column-20', 'column column-40', 'column column-40'],
+	                ['column column-33', 'column column-33', 'column column-33'],
+	                ['column column-40', 'column column-40', 'column column-20'],
+	                ['column column-50', 'column column-25', 'column column-25'],
+	                ['column column-60', 'column column-20', 'column column-20']
+                ],
+                [   //increment for 2 columns
+	                ['column column-10', 'column column-90'],
+	                ['column column-20', 'column column-80'],
+	                ['column column-25', 'column column-75'],
+	                ['column column-33', 'column column-67'],
+	                ['column column-40', 'column column-60'],
+	                ['column column-50', 'column column-50'],
+	                ['column column-60', 'column column-40'],
+	                ['column column-67', 'column column-33'],
+	                ['column column-75', 'column column-25'],
+	                ['column column-80', 'column column-20'],
+	                ['column column-90', 'column column-10']
+                ],
+            ],
+        clearPreferences: true
+    });
+</script>
+
+</body>
+</html>
