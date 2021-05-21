@@ -137,7 +137,7 @@ var ContentBuilder = (function () {
 
             if (!animated) {
               // if not set or false
-              animate = false; // overide   
+              animate = false; // overide
             }
           }
         } else {
@@ -443,7 +443,7 @@ var ContentBuilder = (function () {
           } else {
             newelement.click();
           } // LATER: auto scroll
-          // LATER: If image, then it needs time to load (resulting incorrect position), so hide element tool. 
+          // LATER: If image, then it needs time to load (resulting incorrect position), so hide element tool.
 
         } // Call onChange
 
@@ -562,7 +562,7 @@ var ContentBuilder = (function () {
             }
 
             block.innerHTML = html;
-          }); //html = snippet.innerHTML; 
+          }); //html = snippet.innerHTML;
           // Add after selected row
 
           cell = this.builder.activeCol;
@@ -799,7 +799,7 @@ var ContentBuilder = (function () {
         }
 
         return text + text2;
-      } // source: http://stackoverflow.com/questions/5605401/insert-link-in-contenteditable-element 
+      } // source: http://stackoverflow.com/questions/5605401/insert-link-in-contenteditable-element
 
     }, {
       key: "saveSelection",
@@ -856,7 +856,7 @@ var ContentBuilder = (function () {
             savedSel.select();
           }
         }
-      } // Clean Word. Source: 
+      } // Clean Word. Source:
       // http://patisserie.keensoftware.com/en/pages/remove-word-formatting-from-rich-text-editor-with-javascript
       // http://community.sitepoint.com/t/strip-unwanted-formatting-from-pasted-content/16848/3
       // http://www.1stclassmedia.co.uk/developers/clean-ms-word-formatting.php
@@ -1218,7 +1218,7 @@ var ContentBuilder = (function () {
     }, {
       key: "addEventListener",
       value: function addEventListener(parent, type, listener) {
-        //LATER: if(parent) 
+        //LATER: if(parent)
         parent.addEventListener(type, listener);
       }
     }, {
@@ -1242,7 +1242,7 @@ var ContentBuilder = (function () {
 
           for (i = 0, imax = classesToDel.length; i < imax; ++i) {
             if (!classesToDel[i]) continue;
-            var classtoDel = classesToDel[i]; // https://jsperf.com/removeclass-methods 
+            var classtoDel = classesToDel[i]; // https://jsperf.com/removeclass-methods
 
             var sClassName = '';
             var currentClasses = element.className.split(' ');
@@ -1684,7 +1684,7 @@ var ContentBuilder = (function () {
         }
 
         if (mode === 'full') {
-          // 
+          //
           if (area) ; else {
             var builders = document.querySelectorAll(this.builder.opts.container);
 
@@ -1890,8 +1890,8 @@ var ContentBuilder = (function () {
                _builder.removeAttribute('gridoutline'); // old
               _builder.removeAttribute('draggridoutline'); // old
               _builder.removeAttribute('between-blocks-left'); // old
-              _builder.removeAttribute('between-blocks-center'); // old  
-              _builder.removeAttribute('hideelementhighlight'); 
+              _builder.removeAttribute('between-blocks-center'); // old
+              _builder.removeAttribute('hideelementhighlight');
                let builderhtml = _builder.innerHTML;
               let tmpbuilder = builderstuff.querySelector('#tmp_buildercontent');
               tmpbuilder.innerHTML = builderhtml;
@@ -1925,12 +1925,12 @@ var ContentBuilder = (function () {
               dom.removeElements( tmpbuilder.querySelectorAll('.irow-add-initial') );
                // LATER: rewrite in javascript
               //$builder.find('*[class=""]').removeAttr('class');
-              //$builder.find('*[style=""]').removeAttr('style'); 
+              //$builder.find('*[style=""]').removeAttr('style');
                elms = tmpbuilder.querySelectorAll('[data-keep]');
               dom.removeAttributes(elms, 'data-keep');
                builderhtml = tmpbuilder.innerHTML.trim();
               builderhtml = builderhtml.replace(/<font/g, '<span').replace(/<\/font/g, '</span');
-          
+
               block.setAttribute('data-html-' + index, encodeURIComponent(builderhtml));
                        index++;
           });
@@ -1942,14 +1942,14 @@ var ContentBuilder = (function () {
           var blockhtml = decodeURIComponent(block.getAttribute('data-html'));
           blockhtml = blockhtml.replace(/{id}/g, util.makeId());
           /* OLD
-          for(var i=1;i<=20;i++){ 
+          for(var i=1;i<=20;i++){
               blockhtml = blockhtml.replace('[%HTML'+i+'%]', (block.getAttribute('data-html-'+i) === undefined ? '' : decodeURIComponent(block.getAttribute('data-html-'+i))));//render editable area
           }
           block.innerHTML = blockhtml; //embedded script is not (and should not) executed here
           */
           // NEW
 
-          block.innerHTML = blockhtml; //embedded script is not (and should not) executed here  
+          block.innerHTML = blockhtml; //embedded script is not (and should not) executed here
 
           var subblocks = block.querySelectorAll('[data-subblock]');
           var i = 1;
@@ -2305,7 +2305,7 @@ var ContentBuilder = (function () {
             var saves = this.undoList[120][0];
             var html = saves.split('###$###')[1]; // Styles doesn't need to be checked. saveForUndoCheck is true only after colorpicker or gradient picker opened
             // (because after opened, user may not make changes, so checking for content change is needed).
-            // This relates to html content, not styles. So we always check html content, not styles. 
+            // This relates to html content, not styles. So we always check html content, not styles.
 
             if (this.builder.saveForUndoCheck) {
               if (html === this.readHtml()) {
@@ -3034,7 +3034,7 @@ var ContentBuilder = (function () {
 
           columnTool.position(cell);
           return;
-        } //others (12 columns grid)       
+        } //others (12 columns grid)
 
 
         if (rowClass !== '' && colClass.length > 0) {
@@ -3198,7 +3198,7 @@ var ContentBuilder = (function () {
 
           columnTool.position(cell);
           return;
-        } //others (12 columns grid)       
+        } //others (12 columns grid)
         // const rowClass = builder.opts.row; //row
         // const colClass = builder.opts.cols; //['col s1', 'col s2', 'col s3', 'col s4', 'col s5', 'col s6', 'col s7', 'col s8', 'col s9', 'col s10', 'col s11', 'col s12']
 
@@ -3488,7 +3488,7 @@ var ContentBuilder = (function () {
         dom$y.addClass(rowMore, 'transition1');
         var elm = rowTool.querySelector('.row-more');
         var top = elm.getBoundingClientRect().top + window.pageYOffset;
-        var left = elm.getBoundingClientRect().left + window.pageXOffset; // const w = rowMore.offsetWidth; 
+        var left = elm.getBoundingClientRect().left + window.pageXOffset; // const w = rowMore.offsetWidth;
 
         rowMore.style.top = top - 8 + 'px';
         dom$y.removeClass(rowMore, 'arrow-bottom');
@@ -3602,7 +3602,7 @@ var ContentBuilder = (function () {
       //         {
       //             passive: dragActive
       //         }
-      //     ); 
+      //     );
       // }
     }
 
@@ -7042,7 +7042,7 @@ var ContentBuilder = (function () {
         if (emptyinfo) emptyinfo.style.display = 'none';
       },
       onStart: function onStart() {
-        builder.uo.saveForUndo(); // Even if cancelled, saveForUndo will make sure not to save if there is no change 
+        builder.uo.saveForUndo(); // Even if cancelled, saveForUndo will make sure not to save if there is no change
 
         var elm = document.querySelector('.is-sidebar-overlay');
         if (elm) elm.style.display = 'none'; // LATER: ContentBox
@@ -7120,10 +7120,10 @@ var ContentBuilder = (function () {
     scrolldown.style.display = 'none';
     /*
     TODO
-    
-    var maxScroll=100000000;       
+
+    var maxScroll=100000000;
     jQuery('#divSnippetScrollUp').css('display','none');
-    jQuery('#divSnippetScrollUp').on("click touchup", function(e) { 
+    jQuery('#divSnippetScrollUp').on("click touchup", function(e) {
         jQuery(".is-design-list").animate({ scrollTop: (jQuery(".is-design-list").scrollTop() - (jQuery(".is-design-list").height()-150) ) + "px" },300, function(){
             if(jQuery(".is-design-list").scrollTop()!=0){
                 jQuery('#divSnippetScrollUp').fadeIn(300);
@@ -7134,29 +7134,29 @@ var ContentBuilder = (function () {
                 jQuery('#divSnippetScrollDown').fadeIn(300);
             } else {
                     jQuery('#divSnippetScrollDown').fadeOut(300);
-            }  
-        });           
+            }
+        });
          e.preventDefault();
         e.stopImmediatePropagation();
         return false;
-    });            
-    jQuery('#divSnippetScrollDown').on("click touchup", function(e) {                         
+    });
+    jQuery('#divSnippetScrollDown').on("click touchup", function(e) {
         jQuery(".is-design-list").animate({ scrollTop: (jQuery(".is-design-list").scrollTop() + (jQuery(".is-design-list").height()-150) ) + "px" }, 300, function() {
             if(jQuery(".is-design-list").scrollTop()!=0){
                 jQuery('#divSnippetScrollUp').fadeIn(300);
             } else {
                 jQuery('#divSnippetScrollUp').fadeOut(300);
-        
+
             }
             if(maxScroll===100000000){
                 maxScroll = jQuery('.is-design-list').prop('scrollHeight') - jQuery('.is-design-list').height() - 30;
-            }  
-            
+            }
+
             if(jQuery(".is-design-list").scrollTop() != maxScroll){
                 jQuery('#divSnippetScrollDown').fadeIn(300);
             } else {
                 jQuery('#divSnippetScrollDown').fadeOut(300);
-            }  
+            }
         });
          e.preventDefault();
         e.stopImmediatePropagation();
@@ -29759,7 +29759,7 @@ var ContentBuilder = (function () {
                   canvas.height = src_image.height;
                   canvas.width = src_image.width;
                   context.drawImage(src_image, 0, 0);
-                  var imageData = canvas.toDataURL("image/png"); 
+                  var imageData = canvas.toDataURL("image/png");
                   img.src = imageData;
               });
               src_image.src = e.target.result;
@@ -29777,7 +29777,7 @@ var ContentBuilder = (function () {
           imageProgress.style.left = img.getBoundingClientRect().left + window.pageXOffset + 'px'; //The #fileEmbedImage triggered 2 times in IE (because of clearInputs below). This makes input.files[0].name returns error on 2nd trigger. Just add try{}!
 
           try {
-            img.setAttribute('data-filename', input.files[0].name); //needed for saveimage.js | 
+            img.setAttribute('data-filename', input.files[0].name); //needed for saveimage.js |
 
             _this2.processImage(input.files[0], img, function () {
               imageProgress.style.display = 'none';
@@ -30344,7 +30344,7 @@ var ContentBuilder = (function () {
             // if(this.builder.isTouchSupport) { //prevent keyboard open
             //     const builderStuff = this.util.builderStuff();
             //     const rteTool = builderStuff.querySelector('#divRteTool');
-            //     const btnFocus = rteTool.querySelector('button'); 
+            //     const btnFocus = rteTool.querySelector('button');
             //     btnFocus.focus();
             //     setTimeout(()=>{
             //         btnFocus.focus();
@@ -30443,7 +30443,7 @@ var ContentBuilder = (function () {
             var initialHeight;
 
             if (4 < orientation && orientation < 9) {
-              //potrait          
+              //potrait
               initialWidth = img.height;
               initialHeight = img.width;
             } else {
@@ -30554,7 +30554,7 @@ var ContentBuilder = (function () {
 
               targetImg.src = _tmpCanvasNoCrop.toDataURL(type, quality);
               return;
-            } //RENDER (tmpCanvasNoCrop)                    
+            } //RENDER (tmpCanvasNoCrop)
 
 
             var mpImg = new MegaPixImage(img);
@@ -30565,7 +30565,7 @@ var ContentBuilder = (function () {
               orientation: orientation
             }, function () {
               if (resize) {
-                //RESIZE (tmpCanvasNoCrop) with good quality.  
+                //RESIZE (tmpCanvasNoCrop) with good quality.
                 //var tmpImg = new Image();
                 var iW = initialWidth;
                 var iH = initialHeight;
@@ -30587,7 +30587,7 @@ var ContentBuilder = (function () {
                     width: iW,
                     height: iH
                   }, function () {
-                    // must specify both width & height correctly (proportionally) 
+                    // must specify both width & height correctly (proportionally)
                     if (iW <= targetWidth || iH <= targetHeight) {
                       targetImg.src = tmpCanvasNoCrop.toDataURL(type, quality); //finished
                       //console.log(this.count); // count check
@@ -30650,7 +30650,7 @@ var ContentBuilder = (function () {
             //     tmpCanvasNoCrop.height = targetImg.height;
             //     tmpCanvasNoCrop.width = targetImg.width;
             //     context.drawImage(targetImg, 0, 0);
-            //     let imageData = tmpCanvasNoCrop.toDataURL("image/png"); 
+            //     let imageData = tmpCanvasNoCrop.toDataURL("image/png");
             //     targetImg.src = imageData;
             //     targetImg.onload = null;
             //     //tmpCanvasNoCrop.parentNode.removeChild(tmpCanvasNoCrop);
@@ -32213,10 +32213,10 @@ var ContentBuilder = (function () {
           moduleModal.querySelector('div').style.maxWidth = w;
           moduleModal.querySelector('div').style.height = h; // OLD
           // Find subblocks (previously is-builder) in custom code blocks and save them to data-html-1, data-html-2, and so on.
-          // let tmpbuilder = this.builderStuff.querySelector('#tmp_buildercontent'); 
+          // let tmpbuilder = this.builderStuff.querySelector('#tmp_buildercontent');
           // if(tmpbuilder) tmpbuilder.parentNode.removeChild(tmpbuilder);
           // dom.appendHtml(this.builderStuff, '<div id="tmp_buildercontent" style="position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden;visibility:hidden;"></div>');
-          // tmpbuilder = this.builderStuff.querySelector('#tmp_buildercontent'); 
+          // tmpbuilder = this.builderStuff.querySelector('#tmp_buildercontent');
           // NEW
 
           var index = 1;
@@ -32231,7 +32231,7 @@ var ContentBuilder = (function () {
           const builders = module.querySelectorAll('is-builder'); // OLD
           Array.prototype.forEach.call(builders, (builder) => {
                //if(dom.parentsHasClass(builder,'slick-cloned')) return; // direct (LATER)
-              
+
               //Cleaning ( builder cleaning commented because its content that's matter => will be saved. See below.. )
               // builder.style.transform = '';
               // builder.style.WebkitTransform= '';
@@ -32250,9 +32250,9 @@ var ContentBuilder = (function () {
                    // builder.removeAttribute('gridoutline'); // old
               // builder.removeAttribute('draggridoutline'); // old
               // builder.removeAttribute('between-blocks-left'); // old
-              // builder.removeAttribute('between-blocks-center'); // old  
-              // builder.removeAttribute('hideelementhighlight'); 
-              
+              // builder.removeAttribute('between-blocks-center'); // old
+              // builder.removeAttribute('hideelementhighlight');
+
               let builderhtml = builder.innerHTML;
               tmpbuilder.innerHTML = builderhtml;
                    let elms = tmpbuilder.querySelectorAll('.elm-active');
@@ -32279,7 +32279,7 @@ var ContentBuilder = (function () {
               dom.removeElements( tmpbuilder.querySelectorAll('.is-rowadd-tool') );
               dom.removeElements( tmpbuilder.querySelectorAll('.ovl') );
               dom.removeElements( tmpbuilder.querySelectorAll('.irow-add-initial') );
-             
+
               elms = tmpbuilder.querySelectorAll('[data-keep]');
               dom.removeAttributes(elms, 'data-keep');
                builderhtml = tmpbuilder.innerHTML.trim();
@@ -32448,8 +32448,8 @@ var ContentBuilder = (function () {
             // builder.removeAttribute('gridoutline'); // old
             // builder.removeAttribute('draggridoutline'); // old
             // builder.removeAttribute('between-blocks-left'); // old
-            // builder.removeAttribute('between-blocks-center'); // old  
-            // builder.removeAttribute('hideelementhighlight'); 
+            // builder.removeAttribute('between-blocks-center'); // old
+            // builder.removeAttribute('hideelementhighlight');
             var builderhtml = builder.innerHTML;
             tmpbuilder = _this.builderStuff.querySelector('#tmp_buildercontent');
             tmpbuilder.innerHTML = builderhtml;
@@ -32488,7 +32488,7 @@ var ContentBuilder = (function () {
           html = html.replace(/{id}/g, _this.util.makeId());
           tmpbuilder.parentNode.removeChild(tmpbuilder); // this.util.showModal(codeModal, true);
           // codeModal.querySelector('.input-customcode').value = html;
-          // codeModal.querySelector('.input-customcode').focus(); 
+          // codeModal.querySelector('.input-customcode').focus();
           // Use existing modal
 
           var viewhtml;
@@ -32636,7 +32636,7 @@ var ContentBuilder = (function () {
         iframeModal = builderStuff.querySelector('.is-modal.iframelink');
         var btn = iframeTool.querySelector('button');
         dom$p.addEventListener(btn, 'click', function () {
-          var iframe = _this.builder.activeIframe; //get values                    
+          var iframe = _this.builder.activeIframe; //get values
 
           var src = iframe.src;
           var embeddedYoutubeRegex = /^.*\/\/www.youtube.com\/embed\//;
@@ -33239,7 +33239,7 @@ var ContentBuilder = (function () {
         }
 
         if (e.keyCode === 8) {
-          //backspace                
+          //backspace
           if (_this.builder.activeIcon) {
             if (dom$n.parentsHasClass(e.target, 'is-builder')) {
               // Delete icon
@@ -36633,7 +36633,7 @@ var ContentBuilder = (function () {
     }
 
     return text + text2;
-  } // source: https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex 
+  } // source: https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex
 
 
   function getGradient(input) {
@@ -38751,7 +38751,7 @@ var ContentBuilder = (function () {
       doc.close();
       var btn = panelStuff.querySelector('.input-elm-fontfamily');
       btn.addEventListener('click', function () {
-        var elm = _this.builder.inspectedElement; //show modal        
+        var elm = _this.builder.inspectedElement; //show modal
 
         _this.util.showModal(fontModal); //Get active font
 
@@ -40976,7 +40976,7 @@ var ContentBuilder = (function () {
                     <h1>..<b>..deeper level..</b>..</h1>
                     <p>..<b>..deeper level..</b>..</p>
                 </div>
-            </div>                            
+            </div>
             */
             if (dom$6.hasClass(elm, 'cell-active') || elm.hasAttribute('data-subblock')) ; else if (dom$6.hasClass(elm, 'cell-active') || elm.parentNode.hasAttribute('data-subblock')) {
               // Level 1
@@ -41456,23 +41456,23 @@ var ContentBuilder = (function () {
                const viewportWidth = window.innerWidth;
               const viewportHeight = window.innerHeight;
                if(this.builder.opts.toolbar === 'left' || this.builder.opts.toolbar === 'right') {
-      
+
                   let h = rteTool.offsetHeight;
-      
+
                   let top = (viewportHeight/2) - (h/2);
-      
+
                   rteTool.style.left = '';
                   rteTool.style.top = top + 'px';
-                  
+
               } else {
-      
+
                   let w = rteTool.offsetWidth;
-          
+
                   let left = (viewportWidth/2) - (w/2);
-          
+
                   rteTool.style.top = '';
                   rteTool.style.left = left + 'px';
-      
+
               }
           }
           if(rteMoreOptions) {
@@ -41687,7 +41687,7 @@ var ContentBuilder = (function () {
 
         for (var j = 0; j < builder.opts.buttonsMore.length; j++) {
           var btn = builder.opts.buttonsMore[j].toLowerCase();
-          if (btn === 'createlink') html_rtemore += "<button title=\"".concat(util.out('Hyperlink'), "\" class=\"rte-link\"><svg class=\"is-icon-flex\" style=\"width:14px;height:14px;\"><use xlink:href=\"#ion-link\"></use></svg></button>");else if (btn === 'icon' && !this.builder.opts.emailMode) html_rtemore += "<button title=\"".concat(util.out('Icon'), "\" class=\"rte-icon\"><svg class=\"is-icon-flex\" style=\"width:14px;height:14px;margin-top:2px;\"><use xlink:href=\"#ion-android-happy\"></use></svg></button>");else if (btn === 'removeformat') html_rtemore += "<button title=\"".concat(util.out('Clean'), "\" class=\"rte-clean\"><svg class=\"is-icon-flex\" style=\"width:11px;height:11px;\"><use xlink:href=\"#icon-clean\"></use></svg></button>");else if (btn === 'bold') html_rtemore += "<button title=\"".concat(util.out('Bold'), "\" class=\"rte-format\" data-command=\"bold\"><span style=\"font-family:serif;font-size:14px;\">B</span></button>");else if (btn === 'italic') html_rtemore += "<button title=\"".concat(util.out('Italic'), "\" class=\"rte-format\" data-command=\"italic\"><span style=\"font-family:serif;font-size:14px;font-style:italic;\">i</span></button>");else if (btn === 'underline') html_rtemore += "<button title=\"".concat(util.out('Underline'), "\" class=\"rte-format\" data-command=\"underline\"><span style=\"font-family:serif;font-size:14px;text-decoration:underline;\">U</span></button>"); // else if(btn==='createlink') html_rtemore += `<button title="${util.out('Hyperlink')}" class="rte-link"><svg class="is-icon-flex" style="width:14px;height:14px;"><use xlink:href="#ion-link"></use></svg></button>`; 
+          if (btn === 'createlink') html_rtemore += "<button title=\"".concat(util.out('Hyperlink'), "\" class=\"rte-link\"><svg class=\"is-icon-flex\" style=\"width:14px;height:14px;\"><use xlink:href=\"#ion-link\"></use></svg></button>");else if (btn === 'icon' && !this.builder.opts.emailMode) html_rtemore += "<button title=\"".concat(util.out('Icon'), "\" class=\"rte-icon\"><svg class=\"is-icon-flex\" style=\"width:14px;height:14px;margin-top:2px;\"><use xlink:href=\"#ion-android-happy\"></use></svg></button>");else if (btn === 'removeformat') html_rtemore += "<button title=\"".concat(util.out('Clean'), "\" class=\"rte-clean\"><svg class=\"is-icon-flex\" style=\"width:11px;height:11px;\"><use xlink:href=\"#icon-clean\"></use></svg></button>");else if (btn === 'bold') html_rtemore += "<button title=\"".concat(util.out('Bold'), "\" class=\"rte-format\" data-command=\"bold\"><span style=\"font-family:serif;font-size:14px;\">B</span></button>");else if (btn === 'italic') html_rtemore += "<button title=\"".concat(util.out('Italic'), "\" class=\"rte-format\" data-command=\"italic\"><span style=\"font-family:serif;font-size:14px;font-style:italic;\">i</span></button>");else if (btn === 'underline') html_rtemore += "<button title=\"".concat(util.out('Underline'), "\" class=\"rte-format\" data-command=\"underline\"><span style=\"font-family:serif;font-size:14px;text-decoration:underline;\">U</span></button>"); // else if(btn==='createlink') html_rtemore += `<button title="${util.out('Hyperlink')}" class="rte-link"><svg class="is-icon-flex" style="width:14px;height:14px;"><use xlink:href="#ion-link"></use></svg></button>`;
           else if (btn === 'align') html_rtemore += "<button title=\"".concat(util.out('Align'), "\" class=\"rte-align\"><svg class=\"is-icon-flex\" style=\"width:12px;height:12px;margin-top:-2px;\"><use xlink:href=\"#icon-align-full\"></use></svg></button>");else if (btn === 'list') html_rtemore += "<button title=\"".concat(util.out('List'), "\" class=\"rte-list\"><svg class=\"is-icon-flex\" style=\"width:12px;height:12px;\"><use xlink:href=\"#icon-list-bullet\"></use></svg></button>");else if (btn === 'color') html_rtemore += "<button title=\"".concat(util.out('Color'), "\" class=\"rte-color\"><svg class=\"is-icon-flex\" style=\"width:12px;height:12px;\"><use xlink:href=\"#ion-contrast\"></use></svg></button>");else if (btn === 'formatting') html_rtemore += "<button title=\"".concat(util.out('Formatting'), "\" class=\"rte-formatting\"><span style=\"font-family:serif;font-size:15px;display:inline-block;\">A</span></button>");else if (btn === 'tags') html_rtemore += customtag_button;else if (btn === 'image') html_rtemore += "<button title=\"".concat(util.out('Image'), "\" class=\"rte-image\"><svg class=\"is-icon-flex\" style=\"width:13px;height:13px;\"><use xlink:href=\"#ion-image\"></use></svg></button>");else if (btn === 'gridtool') html_rtemore += "<button title=\"".concat(util.out('Grid Tool'), "\" class=\"rte-grideditor\"><svg class=\"is-icon-flex\" style=\"margin-right:-3px;\"><use xlink:href=\"#ion-grid\"></use></svg></button>");else if (btn === 'html') html_rtemore += "<button title=\"".concat(util.out('HTML'), "\" class=\"rte-html\"><svg class=\"is-icon-flex\" style=\"margin-right:-3px;width:14px;height:14px;\"><use xlink:href=\"#ion-ios-arrow-left\"></use></svg><svg class=\"is-icon-flex\" style=\"margin-left:-2px;fill:rgba(0, 0, 0, 0.65);width:14px;height:14px;\"><use xlink:href=\"#ion-ios-arrow-right\"></use></svg></button>");else if (btn === 'preferences') html_rtemore += "<button title=\"".concat(util.out('Preferences'), "\" class=\"rte-preferences\"><svg class=\"is-icon-flex\" style=\"width:13px;height:13px;\"><use xlink:href=\"#ion-wrench\"></use></svg></button>");else if (btn === 'addsnippet') html_rtemore += "<button title=\"".concat(util.out('Add Snippet'), "\" class=\"rte-addsnippet\"><svg class=\"is-icon-flex\" style=\"width:18px;height:18px;margin-top:-1px;\"><use xlink:href=\"#ion-ios-plus-empty\"></use></svg></button>");else if (btn === 'formatpara') html_rtemore += "<button title=\"".concat(util.out('Paragraph'), "\" class=\"rte-paragraph\"><span style=\"font-family:serif;font-size:14px;display:inline-block;margin-top:2px;\">H</span></button>");else if (btn === 'font') html_rtemore += "<button title=\"".concat(util.out('Font'), "\" class=\"rte-fontfamily\"><span style=\"font-family:serif;font-size:18px;text-transform:none;display:inline-block;margin-top: -3px;\">a</span></button>");else if (btn === 'textsettings') html_rtemore += "<button title=\"".concat(util.out('Text Settings'), "\" class=\"rte-textsettings\"><svg class=\"is-icon-flex\" style=\"width:16px;height:16px;\"><use xlink:href=\"#ion-ios-settings\"></use></svg></button>");else if (btn === 'undo') html_rtemore += "<button title=\"".concat(util.out('Undo'), "\" class=\"rte-undo\"><svg class=\"is-icon-flex\" style=\"margin-top:2px;width:15px;height:15px;\"><use xlink:href=\"#ion-ios-undo\"></use></svg></button>");else if (btn === 'redo') html_rtemore += "<button title=\"".concat(util.out('Redo'), "\" class=\"rte-redo\"><svg class=\"is-icon-flex\" style=\"margin-top:2px;width:15px;height:15px;\"><use xlink:href=\"#ion-ios-redo\"></use></svg></button>");else if (btn === '|') {
               html_rtemore += '<div class="rte-separator"></div>';
             } else {
@@ -42661,7 +42661,7 @@ var ContentBuilder = (function () {
 
 
           if (!_this.builder.isTouchSupport) {
-            util.saveSelection(); //Needed because after format, a tag is added (ex. <b>,<i>), so, make selection again. 
+            util.saveSelection(); //Needed because after format, a tag is added (ex. <b>,<i>), so, make selection again.
           }
 
           if (text.trim() === '') {
@@ -42675,7 +42675,7 @@ var ContentBuilder = (function () {
             }
           } // Or can be placed here:
           // if(this.builder.isTouchSupport) { //prevent keyboard open
-          //     const btnFocus = this.rteTool.querySelector('button'); 
+          //     const btnFocus = this.rteTool.querySelector('button');
           //     btnFocus.focus();
           // }
           //Trigger Change event
@@ -42763,7 +42763,7 @@ var ContentBuilder = (function () {
         dom$4.addEventListener(btn, 'click', function () {
           _this.builder.uo.saveForUndo(); //util.restoreSelection(); //a must
           // if(this.builder.isTouchSupport) { //prevent keyboard open
-          //     const btnFocus = this.rteTool.querySelector('button'); 
+          //     const btnFocus = this.rteTool.querySelector('button');
           //     btnFocus.focus();
           // }
 
@@ -42816,7 +42816,7 @@ var ContentBuilder = (function () {
           Array.prototype.forEach.call(spans, function (span) {
             span.setAttribute('data-keep', '');
           });
-          var command = btn.getAttribute('data-action'); //insertUnorderedList, insertOrderedList, indent, outdent           
+          var command = btn.getAttribute('data-action'); //insertUnorderedList, insertOrderedList, indent, outdent
 
           document.execCommand(command, false, null); // cleanup span with style
 
@@ -42871,7 +42871,7 @@ var ContentBuilder = (function () {
 
           util.restoreSelection(); //a must
 
-          var command = btn.getAttribute('data-block'); //h1, h2, h3, h4, p, pre  
+          var command = btn.getAttribute('data-block'); //h1, h2, h3, h4, p, pre
 
           var block = document.queryCommandValue('FormatBlock');
           block = block.toLowerCase();
@@ -42890,7 +42890,7 @@ var ContentBuilder = (function () {
               var newnode = element.cloneNode(true);
               var s = newnode.outerHTML.replace('<pre', '<' + command);
               s = s.replace('</pre>', '</' + command + '>');
-              element.outerHTML = s; // Highlight 
+              element.outerHTML = s; // Highlight
 
               var _btns = _this.rteParagraphOptions.querySelectorAll('[data-block]');
 
@@ -42900,7 +42900,7 @@ var ContentBuilder = (function () {
               dom$4.addClass(_this.rteParagraphOptions.querySelector('[data-block="' + command + '"]'), 'on');
             }
           } else {
-            document.execCommand('formatBlock', false, '<' + command + '>'); //Needs contenteditable.         
+            document.execCommand('formatBlock', false, '<' + command + '>'); //Needs contenteditable.
           }
 
           _this.rteParagraphOptions.style.display = 'none';
@@ -43012,7 +43012,7 @@ var ContentBuilder = (function () {
 
 
           if (!_this.builder.isTouchSupport) {
-            util.saveSelection(); //Needed because after format, a tag is added (ex. <b>,<i>), so, make selection again. 
+            util.saveSelection(); //Needed because after format, a tag is added (ex. <b>,<i>), so, make selection again.
           }
 
           if (text.trim() === '') {
@@ -43684,7 +43684,7 @@ var ContentBuilder = (function () {
             dom$4.removeClass(this.rteFormattingOptions.querySelector('[data-command=uppercase]'), 'on');
           }
         } else {
-          return; // Without this, the line below generates error on first image click (FF). In addition, getState is for text. 
+          return; // Without this, the line below generates error on first image click (FF). In addition, getState is for text.
         }
 
         if (document.queryCommandState('JustifyFull')) {
@@ -43908,7 +43908,7 @@ var ContentBuilder = (function () {
 
         if (!this.builder.inspectedElement) {
           //save selection
-          this.util.saveSelection(); //Needed because after format, a tag is added (ex. <span>), so, make selection again. 
+          this.util.saveSelection(); //Needed because after format, a tag is added (ex. <span>), so, make selection again.
 
           if (this.builder.isTouchSupport) {
             //prevent keyboard open
@@ -43949,7 +43949,7 @@ var ContentBuilder = (function () {
             var count = tmp.split(fontname).length;
 
             if (count < 3) {
-              //not used     
+              //not used
               var attr = links[i].getAttribute('data-protect');
 
               if (!attr) {
@@ -44025,7 +44025,7 @@ var ContentBuilder = (function () {
                 dom$4.selectElementContents(fontElements[i]); // if(this.builder.isTouchSupport) dom.addClass(fontElements[i], 'textblock-active');
               }
             } //cleaning added <span face="">.
-            // example: 
+            // example:
             // <p style="text-align: justify;"><span style="font-family: &quot;Press Start 2p&quot;, cursive;">Lorem </span>
             // <span style="font-family: &quot;M PLUS Rounded 1c&quot;, sans-serif;">Ipsum</span>
             // <span face="Press Start 2p, cursive;"> is simply dummy text of the printing and typesetting industry...</span></p>
@@ -44103,7 +44103,7 @@ var ContentBuilder = (function () {
 
         if (!this.builder.inspectedElement) {
           //save selection
-          this.util.saveSelection(); //Needed because after format, a tag is added (ex. <span>), so, make selection again. 
+          this.util.saveSelection(); //Needed because after format, a tag is added (ex. <span>), so, make selection again.
 
           if (this.builder.isTouchSupport) {
             //prevent keyboard open
@@ -44145,7 +44145,7 @@ var ContentBuilder = (function () {
             var count = _tmp.split(fontname).length;
 
             if (count < 3) {
-              //not used     
+              //not used
               var attr = links[i].getAttribute('data-protect');
 
               if (!attr) {
@@ -44365,7 +44365,7 @@ var ContentBuilder = (function () {
 
                 _this2.builderStuff.querySelector('#form-' + _this2.count).setAttribute('action', _this2.opts.handler + (_this2.opts.handler.indexOf('?') >= 0 ? '&' : '?') + 'count=' + _this2.count);
 
-                _this2.builderStuff.querySelector('#form-' + _this2.count).submit(); //Note: the submitted image will be saved on the server 
+                _this2.builderStuff.querySelector('#form-' + _this2.count).submit(); //Note: the submitted image will be saved on the server
                 //by saveimage.php (if using PHP) or saveimage.ashx (if using .NET)
                 //and the image src will be changed with the new saved image.
 
@@ -44423,7 +44423,7 @@ var ContentBuilder = (function () {
           if (this === relTarget || isAChildOf(this, relTarget)) return;
           elm = this;
           var style = window.getComputedStyle(elm.parentNode);
-          var direction = style.getPropertyValue('flex-direction'); //console.log(style.flexDirection); 
+          var direction = style.getPropertyValue('flex-direction'); //console.log(style.flexDirection);
 
           var s = elm.getAttribute('data-title');
           tooltip.innerHTML = s;
@@ -44660,10 +44660,10 @@ var ContentBuilder = (function () {
         },
         scriptPath: '',
         pluginPath: '',
-        modulePath: 'assets/modules/',
-        assetPath: 'assets/',
-        fontAssetPath: 'assets/fonts/',
-        snippetData: 'assets/minimalist-blocks/snippetlist.html',
+        modulePath: '.assets/modules/',
+        assetPath: '.assets/',
+        fontAssetPath: '.assets/fonts/',
+        snippetData: '.assets/minimalist-blocks/snippetlist.html',
         snippetPath: '',
         snippetPathReplace: [],
         // ['',''],
@@ -44698,7 +44698,7 @@ var ContentBuilder = (function () {
         toolbarDisplay: 'auto',
         snippetsSidebarDisplay: 'auto',
         plugins: [],
-        // onImageSelectClick: function () { }, 
+        // onImageSelectClick: function () { },
         // onFileSelectClick: function () { },
         // onPluginsLoaded: function () { },
         // onImageBrowseClick: function () { },
@@ -44734,7 +44734,7 @@ var ContentBuilder = (function () {
         emailSnippetCategories: [[1, 'Logo'], [14, 'Call to Action'], [2, 'Title'], [3, 'Title, Subtitle'], [4, 'Info, Title'], [7, 'Paragraph'], [6, 'Heading'], [8, 'Buttons'], [9, 'Callouts'], [10, 'Images + Caption'], [12, 'Images'], [13, 'List'], [15, 'Pricing'], [16, 'Quotes'], [17, 'Profile'], [18, 'Contact Info'], [19, 'Footer'], [20, 'Separator']],
         defaultEmailSnippetCategory: 14,
         undoRedoStyles: false,
-        // specialElementClasses: ['sl-wrapper', 'sl-overlay'] // specify elements that when clicked will not affect the builder interface (active selection). Usefull for external code, ex lightbox, etc. 
+        // specialElementClasses: ['sl-wrapper', 'sl-overlay'] // specify elements that when clicked will not affect the builder interface (active selection). Usefull for external code, ex lightbox, etc.
         // onUndo: function () { },
         // onRedo: function () { }
 
@@ -44855,7 +44855,7 @@ var ContentBuilder = (function () {
       }
 
       this.builderStuff = builderStuff;
-      prepareSvgIcons(); // Prepare icons (embed svg definitions for icons) 
+      prepareSvgIcons(); // Prepare icons (embed svg definitions for icons)
 
       this.preferences = new Preferences(this);
       renderGridEditor(this); // Render Grid Editor
@@ -45004,13 +45004,13 @@ var ContentBuilder = (function () {
         // let c = dom.parentsHasClass(target, 'is-side'); // side panel
         // let d = dom.parentsHasClass(target, 'is-pop'); // pop
         // let f = dom.parentsHasClass(target, 'is-tool'); // tool
-        // let g = dom.parentsHasClass(target, 'is-rte-tool'); 
-        // let h = dom.parentsHasClass(target, 'is-rte-pop'); 
-        // let i = dom.parentsHasClass(target, 'row-add-initial'); 
-        // let j = dom.hasClass(target, 'sl-overlay') || 
-        //     dom.parentsHasClass(target, 'sl-overlay') || 
-        //     dom.hasClass(target, 'sl-close') || 
-        //     dom.parentsHasClass(target, 'sl-close'); 
+        // let g = dom.parentsHasClass(target, 'is-rte-tool');
+        // let h = dom.parentsHasClass(target, 'is-rte-pop');
+        // let i = dom.parentsHasClass(target, 'row-add-initial');
+        // let j = dom.hasClass(target, 'sl-overlay') ||
+        //     dom.parentsHasClass(target, 'sl-overlay') ||
+        //     dom.hasClass(target, 'sl-close') ||
+        //     dom.parentsHasClass(target, 'sl-close');
         // Image Resizer
 
 
@@ -45243,7 +45243,7 @@ var ContentBuilder = (function () {
               animation: 300,
               handle: '.row-handle',
               onStart: function onStart() {
-                _this2.uo.saveForUndo(); // Even if cancelled, saveForUndo will make sure not to save if there is no change 
+                _this2.uo.saveForUndo(); // Even if cancelled, saveForUndo will make sure not to save if there is no change
 
 
                 _this2.colTool.hideColumnTool();
@@ -45282,7 +45282,7 @@ var ContentBuilder = (function () {
                     bSnippet = false; // Snippet is wrapped in row/colum
                   }
 
-                  if (_this2.opts.emailMode) bSnippet = false; // Convert snippet into your defined 12 columns grid   
+                  if (_this2.opts.emailMode) bSnippet = false; // Convert snippet into your defined 12 columns grid
 
                   var rowClass = _this2.opts.row; //row
 
@@ -45637,7 +45637,7 @@ var ContentBuilder = (function () {
     }, {
       key: "getModuleSettings",
       value: function getModuleSettings() {
-        var activeModule = document.querySelector('[data-module-active]'); //get active module 
+        var activeModule = document.querySelector('[data-module-active]'); //get active module
 
         return decodeURIComponent(activeModule.getAttribute('data-settings'));
       }
@@ -46230,7 +46230,7 @@ var ContentBuilder = (function () {
         //     elms = col.querySelectorAll('[data-keep-line-height]');
         //     Array.prototype.forEach.call(elms, (elm) => {
         //         elm.removeAttribute('data-keep-line-height');
-        //     });                       
+        //     });
         // }
         // this.autoclean =false;
 
@@ -46374,7 +46374,7 @@ var ContentBuilder = (function () {
                 //         return (this.nodeType === 3 && jQuery.trim(this.nodeValue)!=='');
                 //     }).wrap( "<p></p>" ).end().filter("br").remove();
                 // }
-                // // Source: https://gist.github.com/sbrin/6801034 
+                // // Source: https://gist.github.com/sbrin/6801034
                 // jQuery('p', $editor).each(function(){
                 //     var str = jQuery(this).attr('style');
                 //     var matches = /mso-list:\w+ \w+([0-9]+)/.exec(str);
@@ -46433,7 +46433,7 @@ var ContentBuilder = (function () {
             _contentword = document.querySelector('#idContentWord');
             if (_contentword) _contentword.parentNode.removeChild(_contentword); // LATER
             // jQuery('.cell-active').find('.elm-active').removeClass('elm-active');
-            // jQuery("#divElementTool").css("display", "none"); //force hide ellement tool 
+            // jQuery("#divElementTool").css("display", "none"); //force hide ellement tool
 
             util.restoreSelection();
             var oSel = window.getSelection();
